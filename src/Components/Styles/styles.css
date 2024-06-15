@@ -1,0 +1,774 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+section{
+  height: 100vh;
+  scroll-snap-align: center;
+}
+html{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  
+}
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 80px;
+  line-height: 80px;
+  z-index: 111;
+}
+.LianDev {
+
+  font-size: 40px;
+  font-weight: 800;
+  color: #3d535f;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.navitem {
+  display: flex;
+}
+.navitem li {
+  list-style: none;
+  margin: 0 15px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.navitem li a {
+  font-size: 25px;
+  color: #3d535f;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.PortfolioImage {
+  position: absolute;
+  top: 30%;
+  left: 54%;
+  line-height: 80px;
+  border-radius: 50%;
+  width: 20%;
+  height: 40%;
+  object-fit: cover;
+}
+.Body .position {
+  font-size: 40px;
+  color: #3d535f;
+  font-weight: bold;
+
+}
+.Body .introduction {
+  color: #3d535f;
+
+  font-size: 18px;
+}
+.Body{
+  background-color: #e9e9e9;
+}
+.myintro {
+  top: 35%;
+  left: 24%;
+  width: 70%;
+  position: absolute;
+}
+.multitext {
+  color: #000000;
+
+  text-transform: capitalize;
+}
+h1{
+  display: block;
+  font-size: 3em;
+  width: 30%;
+  font-weight: 900;
+  color: #3d535f;
+  }
+
+.Logo {
+font-size: 30px;
+color: #000000;
+margin: 25px 10px;
+
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.jobstreet{
+  position: relative;
+  filter: grayscale(100%);
+  top: 8px;
+  margin: 25px 10px;
+  width: 35px;
+  background-color: #e9e9e9;
+  height: 35px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.Logo:hover {
+  transform: scale(1.3);
+}
+.jobstreet:hover{
+  transform: scale(1.3);
+}
+  
+
+li:hover {
+  transform: scale(1.1);
+}
+/* about*/
+.title{
+  display: flex;
+  font-size: 40px;
+padding: 10px 10px;
+  font-weight: 800;
+  color: 3d535f;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.aboutmeprofile{
+  position: absolute;
+
+  line-height: 80px;
+  border-radius: 30px;
+  width: 24%;
+  height: 50%;
+  padding-left: 10px;
+  margin-left: 50px;
+  object-fit: cover;
+}
+#about{
+  padding: 80px 0;
+  
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.col1{
+  flex-basis: 35%;
+}
+.col2{
+  flex-basis: 60%;
+  height: 50px;
+}
+.col2 p {
+  color: #000000;
+
+  font-size: 18px;
+}
+
+.tabs{
+  display: flex;
+  margin: 20px 0 40px;
+}
+.links{
+ margin-right: 60px;
+ font-size: 18px;
+ font-weight: 800;
+ cursor: pointer;
+ position: relative;
+
+}
+.links::after{
+content: "";
+width: 0;
+height: 3px;
+background:  #3d535f;
+position: absolute;
+left: 0;
+bottom: -8px;
+transition: 0.5s;
+}
+.links.active::after{
+  width: 50%;
+}
+/* Skill Percentage */
+.skillsection{
+  display: flex ;
+  flex-wrap: wrap;
+ 
+
+}
+
+
+
+.heading {
+
+  margin-left: 70px;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+ 
+}
+.bar{
+  font-size: 20px;
+}
+.hard-bar .bar{
+margin-top: 40px 0;
+
+}
+.hard-bar .bar:first-child{
+  margin-top: 0;
+}
+.hard-bar .bar:last-child{
+  margin-bottom: 0;
+}
+.hard-bar .bar .info{
+  margin-bottom: 5px;
+}
+.hard-bar .bar .info span {
+  font-size: 17px;
+  font-weight: 600;
+  opacity: 0; /* Initial state for animation */
+  animation: showText 0.5s 1s linear forwards; /* Corrected animation timing */
+}
+@keyframes scaleProgress {
+ 
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.hard-bar .bar .progressline {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 6px;
+  background-color: #000000;
+  animation: scaleProgress 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.hard-bar .bar .progressline span {
+  height: 100%;
+  background:  #6f94a8;
+  position: absolute;
+  border-radius: 10px;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: scaleProgress 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+/* Adjust the width for different skills */
+.progressline.html span {
+  width: 90%; 
+}
+
+.progressline.css span {
+  width: 90%; 
+}
+
+.progressline.js span {
+  width: 75%; 
+}
+
+.progressline.react span {
+  width: 75%; 
+}
+
+.progressline.ts span {
+  width: 70%; 
+}
+
+.progressline.jav span {
+  width: 60%; 
+}
+.progressline span::after {
+  position: absolute;
+  padding: 1px 8px;
+  background: #6f94a8;
+  color: #ffffff; /* Use #ffffff for full white */
+  font-size: 12px;
+  border-radius: 3px;
+  top: -28px;
+  right: -20px; /* Adjust the position */
+  animation: showText 0.5s linear forwards 1.5s; /* Corrected order of animation properties */
+  opacity: 0;
+}
+
+.progressline.html span::after {
+  content: "90%";
+}
+
+.progressline.css span::after {
+  content: "90%";
+}
+
+.progressline.js span::after {
+  content: "75%";
+}
+
+.progressline.react span::after {
+  content: "75%";
+}
+
+.progressline.ts span::after {
+  content: "70%";
+}
+
+.progressline.jav span::after {
+  content: "50%";
+}
+
+.progressline span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000000;
+  top: -10px;
+  right: 0;
+  animation: showText 0.5s linear forwards 1.5s;
+}
+
+@keyframes showText {
+  to {
+    opacity: 1;
+  }
+}
+.radials{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.radials .radial{
+  width: 50%;
+  height: 180px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.radials .radial .svgradial{
+ position: absolute;
+ top: 50%;
+ left: 60%;
+ transform: translate(-50%, -50%) rotate(-90deg);
+ width: 120px;
+ height: 160px;
+  
+}
+.radials .radial .progress-bar{
+  stroke-width: 9;
+  stroke: #000000;
+  fill: transparent;
+  stroke-dashoffset: 502;
+  stroke-dasharray: 502;
+  stroke-linecap: round;
+  animation: anim-bar 1s linear forwards;
+}
+@keyframes anim-bar
+{
+  100%{
+stroke-dashoffset: -1;
+  }
+}
+.path{
+  stroke-width: 10;
+  stroke: #6f94a8;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+
+
+}
+.path-team{
+  animation: animate-team 1s 1s linear forwards;
+}
+.path-commu{
+  animation: animate-commu 1s 1s linear forwards;
+}
+.path-create{
+  animation: animate-create 1s 1s linear forwards;
+}
+.path-probsolve{
+  animation: animate-probsolve 1s 1s linear forwards;
+}
+@keyframes animate-create {
+  100%{
+stroke-dashoffset: 50;
+  }
+  
+}
+@keyframes animate-commu {
+  100%{
+stroke-dashoffset: 175;
+  }
+  
+}
+@keyframes animate-team {
+  100%{
+    stroke-dashoffset: 75;
+  }
+  
+}
+@keyframes animate-probsolve {
+  100%{
+stroke-dashoffset: 75;
+  }
+  
+}
+.radial .percentage{
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+  font-weight: 600;
+ animation: showText 0.5 1s linear forwards;
+
+
+}
+.radial .text{
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 60%;
+
+  bottom: 5px;
+  transform: translateX(-50%);
+  font-size: 17px;
+  font-weight: 600;
+  animation: showText 0.5 1s linear forwards;
+
+
+}
+.wrapper{
+  padding: 0 10px;
+}
+#card-area{
+  padding: 20px 0;
+}
+.box-area{
+  display: grid;
+  margin-top: 130px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  grid-gap: 50px;
+}
+.box{
+  width: 440px;
+  height: 300px;
+  border-radius: 20px;
+   overflow: hidden;
+  border:8px solid #d6d6d6;
+  position: relative;
+  }
+ 
+  .box img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 15px;
+  }
+
+.certi{
+ text-align: center;
+
+ font-size: 40px;
+ font-weight: 800;
+ color: #3d535f;
+ letter-spacing: 3px;
+ cursor: pointer;
+ text-transform: uppercase;
+
+}
+
+.overlay{
+  width: 320px;
+ background-color: #ffffff;
+  padding: 2rem 2rem;
+  box-shadow: 0 8px 24px hsla(0,0%,0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+   opacity: 0;
+  transition: opacity 1s 1s;
+
+
+}
+.overlay:hover .box{
+  animation: showdata 1s forwards;
+  opacity: 1;
+  transition: opacity 3s;
+}
+.overlay:hover{
+  animation: remove-overflow 2s forwar;
+}
+.card-title{
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+ color: #000000;
+ margin-bottom: .75rem ;
+}
+.card-btn{
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color:#3d535f ;
+}
+.card-btn:hover {
+text-decoration: underline;
+
+}
+.box:hover .overlay{
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+.box:hover{
+  animation: remove-overflow 2s forwards;
+}
+ .box:not(:hover){
+  animation: show-overflow 2s forwards;
+ }
+ .box:not(:hover) .overlay{
+  animation: remove-data 1s forwards;
+ }
+@keyframes show-data{
+  50%{
+    transform: translateY(-10rem);
+
+}
+100%{
+  transform: translateY(-7rem);
+
+}
+}
+@keyframes remove-overflow{
+
+  to{
+overflow: initial;
+  }
+}
+
+@keyframes  remove-data{
+  0%{
+    transform: translateY(-7rem);
+    
+  }
+  50%{
+    transform: translateY(-10rem);
+    
+  }
+  100%{
+    transform: translateY(.5rem);
+    
+  }
+}
+@keyframes show-overflow{
+  0%{
+overflow: initial;
+pointer-events: none;
+  }
+  50%{
+    overflow: hidden;
+    
+      }
+}
+@keyframes popup-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #3d535f67;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: popup-animation 0.5s forwards; /* Apply animation */
+}
+.popup img{
+  width: 700px;
+}
+/*projects*/
+.Proj{
+  text-align: center;
+ 
+  font-size: 40px;
+  font-weight: 800;
+  color: #3d535f;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+ 
+ }
+ .subtitle{
+  display: block;
+  font-size: 15px;
+  margin-bottom: .75rem ;
+  
+ }
+ .overlay-Project {
+  width: 360px;
+  background-color: #ffffff;
+   padding: 2rem 2rem;
+   box-shadow: 0 8px 24px hsla(0,0%,0%, .15);
+   border-radius: 1rem;
+   position: absolute;
+   bottom: -17rem;
+   left: 0;
+   right: 0;
+   opacity: 0;
+   margin-inline: auto;
+
+   transition: opacity 1s 1s;
+ }
+ .overlay-Project:hover .box{
+  animation: showdata 1s forwards;
+  opacity: 1;
+  transition: opacity 3s;
+}
+.box-project{
+  width: 540px;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  border:8px solid #d6d6d6;
+  position: relative;
+  left: 100px;
+  }
+ 
+  .box-project img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 15px;
+  }
+
+.overlay-Project:hover{
+  animation: remove-overflow 2s forwar;
+}
+.box-project:hover .overlay-Project{
+  animation: show-data-project 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+.box-project:hover{
+  animation: remove-overflow-project 2s forwards;
+}
+ .box-project:not(:hover){
+  animation: show-overflow-project 2s forwards;
+ }
+ .box-project:not(:hover) .overlay-Project{
+  animation: remove-data-project 1s forwards;
+ }
+ .box-area-project{
+  display: grid;
+  margin-top: 130px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, .3fr));
+}
+
+ @keyframes show-data-project{
+  50%{
+    transform: translateY(-18rem);
+
+}
+100%{
+  transform: translateY(-9rem);
+
+}
+}
+@keyframes remove-overflow-project{
+
+  to{
+overflow: initial;
+  }
+}
+
+@keyframes  remove-data-project{
+  0%{
+    transform: translateY(-9rem);
+    
+  }
+  50%{
+    transform: translateY(-18rem);
+    
+  }
+  100%{
+    transform: translateY(.5rem);
+    
+  }
+}
+@keyframes show-overflow-project{
+  0%{
+overflow: initial;
+pointer-events: none;
+  }
+  50%{
+    overflow: hidden;
+    
+      }
+}
+
+/* responsive */
+@media (max-width: 500px) {
+  .PortfolioImage {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    width: 40%;
+    height: 20%;
+    object-fit: cover;
+  }
+  .Body .position {
+    text-align: center;
+    font-size: 35px;
+
+    font-weight: bold;
+    font-family: "Roboto";
+  }
+  .Body .introduction {
+    color: #bababa;
+    width: 350px;
+    text-align: center;
+    font-size: 15px;
+    font-family: "Roboto";
+  }
+  .Logo {
+    position: relative;
+    left: 23%;
+    width: 30px;
+    height: 30px;
+    filter: grayscale(100%);
+    padding: 15px;
+  }
+}
