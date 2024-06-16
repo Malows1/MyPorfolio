@@ -664,7 +664,7 @@ pointer-events: none;
   overflow: hidden;
   border:8px solid #d6d6d6;
   position: relative;
-  left: 100px;
+  left: 400px;
   }
  
   .box-project img {
@@ -738,7 +738,115 @@ pointer-events: none;
     
       }
 }
+/*footer*/
+.footerbg{
+  background-color:#ffffff;
+ min-height: 100vh;
+  width: 100%;
+  position: relative;
 
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.footerbg .content{
+  max-width: 800px;
+  text-align: center;
+
+}
+.footerbg .content h2{
+  font-size: 40px;
+  font-weight: 800;
+  color: #3d535f;
+}
+
+.contact-container{
+  width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 30px;
+
+}
+.contact-container .contactInfo{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+
+}
+.contact-container .contactInfo .contact-box{
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+}
+.contact-container .contactInfo .contact-box .contact-icon{
+  min-width: 60px;
+  height: 60px;
+  background: #303030cb;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 36px;
+  animation: beat 2s infinite; /* Continuous beating animation */
+  cursor: pointer;
+
+}
+.contact-container .contactInfo .contact-box .contact-icon i{
+ position: relative;
+ margin-left: 12px;
+ margin-top: 11px;
+}
+.contact-container .contactInfo .contact-box .contact-text{
+  display: flex;
+  margin-left: 20px;
+
+  font-size: 16px;
+  color: #000000;
+  flex-direction: column;
+font-weight: 500;
+}
+.contact-container .contactInfo .contact-box .contact-text a{
+  
+  color: #000000;
+
+}
+
+.contact-container .contactInfo .contact-box .contact-text h3{
+  font-weight: 800;
+  color: #3d535f;
+}
+.Location-Map{
+  width: 40%;
+  height: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #3d535f7e;
+  transition: transform 0.3s ease; /* Smooth transition */
+  overflow: hidden;}
+
+.Location-Map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+ overflow: hidden;
+}
+
+.Location-Map:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
 /* responsive */
 @media (max-width: 500px) {
   .PortfolioImage {
