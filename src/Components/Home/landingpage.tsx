@@ -45,7 +45,7 @@
 
     const typedRef = useRef(null);
     useEffect(() => {
-      document.title = "Lian's Porfolio";
+      document.title = "Lian's Portfolio";
     });
     useEffect(() => {
       const options = {
