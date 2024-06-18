@@ -6,9 +6,7 @@
   import {
     faGithub,
     faLinkedin,
-    faFacebook,
-    faInstagram,
-    faTelegram,
+   
   } from "@fortawesome/free-brands-svg-icons";
 
   import "boxicons/css/boxicons.min.css";
@@ -23,10 +21,25 @@
     const DSDAP = require("../Images/DSDAP.png");
     const intern = require("../Images/intern.png");
     const netfund = require("../Images/netfund.png");
-    /* Project*/
-    const login = require("../Images/login.png");
-    const picintern = require("../Images/loginintern.png");
-
+    /* Project Intern*/
+    const loginintern = require("../Images/Internshipimg/loginintern.png");
+    const androidhelp1 = require("../Images/Internshipimg/androidhelp1.png");
+    const androidhelp2 = require("../Images/Internshipimg/androidhelp2.png");
+    const blindstruc = require("../Images/Internshipimg/blindstruc.png");
+    const englishversion = require("../Images/Internshipimg/englishversion.png");
+    const failed = require("../Images/Internshipimg/failed.png");
+    const score = require("../Images/Internshipimg/score.png");
+    const UIgiftcard = require("../Images/Internshipimg/UIgiftcard.png");
+    /*project Capstone*/
+    const login = require("../Images/capstoneimg/login.png");
+    const file201 = require("../Images/capstoneimg/201file.png");
+    const attendance = require("../Images/capstoneimg/attendance.png");
+    const CoeReq = require("../Images/capstoneimg/CoeReq.png");
+    const Info = require("../Images/capstoneimg/Info.png");
+    const payslip = require("../Images/capstoneimg/payslip.png");
+    const reports = require("../Images/capstoneimg/reports.png");
+    const Req= require("../Images/capstoneimg/Req.png");
+    
     /* locationmap*/
     const myLoc = require("../Images/myLoc.png");
 
@@ -36,7 +49,7 @@
     });
     useEffect(() => {
       const options = {
-        strings: ["Mark Lian Perez", "Front-End Developer", "Web Developer"],
+        strings: ["Mark Lian D. Perez", "Front-End Developer", "Web Developer"],
         loop: true,
         typeSpeed: 100,
         backSpeed: 80,
@@ -76,18 +89,24 @@
     }, []);
 
     const [isPopUpVisible, setIsPopUpVisible] = useState(false);
+    const [galleryImages, setGalleryImages] = useState([]);
     const [currentImage, setCurrentImage] = useState(null);
 
     const handleShowPopUp = (imageSrc) => {
       setCurrentImage(imageSrc);
+      setGalleryImages(imageSrc);
       setIsPopUpVisible(true);
     };
 
     const handleClosePopUp = () => {
       setIsPopUpVisible(false);
       setCurrentImage(null);
+      setGalleryImages([]);
     };
+
+    
     return (
+      
       <div className="Body">
         <section>
           <img src={Profile} alt="My portfolio" className="PortfolioImage" />
@@ -378,7 +397,7 @@
                     <a
                       href="#CLEP"
                       onClick={(e) => {
-                        handleShowPopUp(CLEP);
+                        handleShowPopUp([CLEP]);
                       }}
                       className="card-btn"
                     >
@@ -395,7 +414,7 @@
                     <a
                       href="#Database Fundation"
                       onClick={(e) => {
-                        handleShowPopUp(dbfundation);
+                        handleShowPopUp([dbfundation]);
                       }}
                       className="card-btn"
                     >
@@ -411,7 +430,7 @@
                     <a
                       href="#Database System"
                       onClick={(e) => {
-                        handleShowPopUp(dbsystem);
+                        handleShowPopUp([dbsystem]);
                       }}
                       className="card-btn"
                     >
@@ -427,7 +446,7 @@
                     <a
                       href="#DSDAP"
                       onClick={(e) => {
-                        handleShowPopUp(DSDAP);
+                        handleShowPopUp([DSDAP]);
                       }}
                       className="card-btn"
                     >
@@ -443,7 +462,7 @@
                     <a
                       href="#Intern"
                       onClick={(e) => {
-                        handleShowPopUp(intern);
+                        handleShowPopUp([intern]);
                       }}
                       className="card-btn"
                     >
@@ -459,7 +478,7 @@
                     <a
                       href="#Network"
                       onClick={(e) => {
-                        handleShowPopUp(netfund);
+                        handleShowPopUp([netfund]);
                       }}
                       className="card-btn NETFUND"
                     >
@@ -469,15 +488,8 @@
                   </div>
                 </div>
               </div>
-              {isPopUpVisible && currentImage && (
-                <div className="popup" onClick={handleClosePopUp}>
-                  <img
-                    src={currentImage}
-                    alt="Full View"
-                    className="popup-image"
-                  />
-                </div>
-              )}
+    
+
             </div>
           </div>
         </section>
@@ -499,12 +511,14 @@
                       <strong> Click below to learn more.</strong>{" "}
                     </p>
 
-                    <a
-                      href="#Login"
+                   <a
+                      href="#Capstone Projects"
                       onClick={(e) => {
-                        handleShowPopUp(login);
+                        handleShowPopUp([login, file201, attendance, 
+                          CoeReq, Info, payslip,reports,Req
+                        ]);
                       }}
-                      className="card-btn"
+                      className="card-btn" 
                     >
                       View Project
                     </a>
@@ -512,7 +526,7 @@
                 </div>
 
                 <div className="box-project">
-                  <img src={picintern} alt="My portfolio" className="" />
+                  <img src={loginintern} alt="My portfolio" className="" />
                   <div className="overlay-Project">
                     <h3 className="card-title">Internship Projects</h3>
                     <p className="subtitle">
@@ -525,10 +539,13 @@
                       <strong> Click below to learn more.</strong>{" "}
                     </p>
                     <a
-                      href="#Database Fundation"
-                      onClick={(e) => {
-                        handleShowPopUp(picintern);
-                      }}
+                       href="#Internship Projects"
+                       onClick={(e) => {
+                         e.preventDefault();
+                         handleShowPopUp([loginintern, failed , androidhelp1 , androidhelp2 
+                          ,blindstruc, englishversion , score, UIgiftcard
+                        ]);
+                       }}
                       className="card-btn"
                     >
                       {" "}
@@ -537,16 +554,23 @@
                   </div>
                 </div>
               </div>
-              {isPopUpVisible && currentImage && (
-                <div className="popup" onClick={handleClosePopUp}>
-                  <img
-                    src={currentImage}
-                    alt="Full View"
-                    className="popup-image"
-                  />
-                </div>
-              )}
-            </div>
+              {isPopUpVisible && galleryImages.length > 0 && (
+  <div className="popup" >
+    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+    {galleryImages.map((image, index) => (
+        <img
+          src={image}
+          alt={`Detailed view ${index + 1}`}  // Provide specific context
+          className="popup-image"
+          key={index}
+        />
+      ))}
+    
+    </div>
+    <button className="close-btn" onClick={handleClosePopUp}>Close</button>
+  </div>
+)}
+        </div>
           </div>
         </section>
 
@@ -559,53 +583,55 @@
               <div className="contactInfo">
                 <div className="contact-box">
                   <div className="contact-icon">
-                    <i style={{ color: "#ffffff" }} className="bx bxs-map"></i>
+                  <a href = "https://www.google.com/maps/place/822+Alley+1,+Pasig,+Metro+Manila/@14.5522783,121.0820219,17.75z/data=!4m5!3m4!1s0x3397c62a52dd88ad:0x5c34d2bb3af39e6a!8m2!3d14.5513547!4d121.0824504!5m1!1e4?entry=ttu">
+                   <i style={{ color: "#ffffff" }} className="bx bxs-map"></i></a>
                   </div>
 
                   <div className="contact-text">
                     <h3> Address</h3>
-                    <p>822 Alley 1 st Kalawaan Pasig City</p>
+                    <a href = "https://www.google.com/maps/place/822+Alley+1,+Pasig,+Metro+Manila/@14.5522783,121.0820219,17.75z/data=!4m5!3m4!1s0x3397c62a52dd88ad:0x5c34d2bb3af39e6a!8m2!3d14.5513547!4d121.0824504!5m1!1e4?entry=ttu">
+                    <p>822 Alley 1 st Kalawaan Pasig City</p></a>
                   </div>
                 </div>
 
                 <div className="contact-box">
                   <div className="contact-icon">
               
-                    <i style={{ color: "#ffffff" }} className="bx bxl-gmail"></i>
+                  <a href = "mailto:markliandperez61@gmail.com" > <i style={{ color: "#ffffff" }} className="bx bxl-gmail"></i></a>  
                   </div>
 
                   <div className="contact-text">
                     <h3> Email</h3>
-                    <a href = "mailto:markliandperez61@gmail.com" style={{ textDecoration: "none" }}><p>markliandperez61@gmail.com</p></a>
+                    <a href = "mailto:markliandperez61@gmail.com" ><p>markliandperez61@gmail.com</p></a>
                   </div>
                   
                 </div>
 
                 <div className="contact-box">
                   <div className="contact-icon">
-                    <i
+                  <a href = "https://www.instagram.com/_leeeyan/">  <i
                       style={{ color: "#ffffff" }}
                       className="bx bxl-instagram"
-                    ></i>
+                    ></i></a>
                   </div>
 
                   <div className="contact-text">
                     <h3> Instagram</h3>
-                    <p>822 Alley 1 st Kalawaan Pasig City</p>
+                    <a href = "https://www.instagram.com/_leeeyan/"><p>https://www.instagram.com/_leeeyan/</p></a>
                   </div>
                 </div>
 
                 <div className="contact-box">
                   <div className="contact-icon">
-                    <i
+                  <a href = "https://www.facebook.com/markliand.perez/"> <i
                       style={{ color: "#ffffff" }}
                       className="bx bxl-facebook-circle"
-                    ></i>
+                    ></i></a>
                   </div>
 
                   <div className="contact-text">
                     <h3> Facebook</h3>
-                    <p>822 Alley 1 st Kalawaan Pasig City</p>
+                   <a href = "https://www.facebook.com/markliand.perez/"> <p>https://www.facebook.com/markliand.perez/</p></a>
                   </div>
                 </div>
 
