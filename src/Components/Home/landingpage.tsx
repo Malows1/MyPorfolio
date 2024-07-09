@@ -1,174 +1,178 @@
-  /* eslint-disable jsx-a11y/anchor-is-valid */
-  import React, { useEffect, useRef, useState } from "react";
-  import Typed from "typed.js";
-  import "../Styles/styles.css";
-  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-  import {
-    faGithub,
-    faLinkedin,
-   
-  } from "@fortawesome/free-brands-svg-icons";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useEffect, useRef, useState } from "react";
+import Typed from "typed.js";
+import "../Styles/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import "boxicons/css/boxicons.min.css";
 
-  import "boxicons/css/boxicons.min.css";
+function MyPortfolio() {
+  /* Certification */
+  const Profile = require("../Images/me.jpeg");
+  const jobstreet = require("../Images/jobstreet.png");
+  const CLEP = require("../Images/CLEP.png");
+  const dbfundation = require("../Images/dbfundation.png");
+  const dbsystem = require("../Images/dbsystem.png");
+  const DSDAP = require("../Images/DSDAP.png");
+  const intern = require("../Images/intern.png");
+  const netfund = require("../Images/netfund.png");
+  /* Project Intern */
+  const loginintern = require("../Images/Internshipimg/loginintern.png");
+  const androidhelp1 = require("../Images/Internshipimg/androidhelp1.png");
+  const androidhelp2 = require("../Images/Internshipimg/androidhelp2.png");
+  const blindstruc = require("../Images/Internshipimg/blindstruc.png");
+  const englishversion = require("../Images/Internshipimg/englishversion.png");
+  const failed = require("../Images/Internshipimg/failed.png");
+  const score = require("../Images/Internshipimg/score.png");
+  const UIgiftcard = require("../Images/Internshipimg/UIgiftcard.png");
+  /*project Capstone*/
+  const login = require("../Images/capstoneimg/login.png");
+  const file201 = require("../Images/capstoneimg/201file.png");
+  const attendance = require("../Images/capstoneimg/attendance.png");
+  const CoeReq = require("../Images/capstoneimg/CoeReq.png");
+  const Info = require("../Images/capstoneimg/Info.png");
+  const payslip = require("../Images/capstoneimg/payslip.png");
+  const reports = require("../Images/capstoneimg/reports.png");
+  const Req= require("../Images/capstoneimg/Req.png");
 
-  function MyPortfolio() {
-    /* Certification*/
-    const Profile = require("../Images/me.jpeg");
-    const jobstreet = require("../Images/jobstreet.png");
-    const CLEP = require("../Images/CLEP.png");
-    const dbfundation = require("../Images/dbfundation.png");
-    const dbsystem = require("../Images/dbsystem.png");
-    const DSDAP = require("../Images/DSDAP.png");
-    const intern = require("../Images/intern.png");
-    const netfund = require("../Images/netfund.png");
-    /* Project Intern*/
-    const loginintern = require("../Images/Internshipimg/loginintern.png");
-    const androidhelp1 = require("../Images/Internshipimg/androidhelp1.png");
-    const androidhelp2 = require("../Images/Internshipimg/androidhelp2.png");
-    const blindstruc = require("../Images/Internshipimg/blindstruc.png");
-    const englishversion = require("../Images/Internshipimg/englishversion.png");
-    const failed = require("../Images/Internshipimg/failed.png");
-    const score = require("../Images/Internshipimg/score.png");
-    const UIgiftcard = require("../Images/Internshipimg/UIgiftcard.png");
-    /*project Capstone*/
-    const login = require("../Images/capstoneimg/login.png");
-    const file201 = require("../Images/capstoneimg/201file.png");
-    const attendance = require("../Images/capstoneimg/attendance.png");
-    const CoeReq = require("../Images/capstoneimg/CoeReq.png");
-    const Info = require("../Images/capstoneimg/Info.png");
-    const payslip = require("../Images/capstoneimg/payslip.png");
-    const reports = require("../Images/capstoneimg/reports.png");
-    const Req= require("../Images/capstoneimg/Req.png");
-    
-    /* locationmap*/
-    const myLoc = require("../Images/myLoc.png");
+  /* locationmap*/
+  const myLoc = require("../Images/myLoc.png");
 
-    const typedRef = useRef(null);
-    useEffect(() => {
-      document.title = "Lian's Portfolio";
-    });
-    useEffect(() => {
-      const options = {
-        strings: ["Mark Lian D. Perez", "Front-End Developer", "Web Developer"],
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 80,
-        backDelay: 1500,
-      };
-
-      const typed = new Typed(typedRef.current, options);
-
-      // Cleanup on unmount
-      return () => {
-        typed.destroy();
-      };
-    }, []);
-
-    useEffect(() => {
-      // Enhanced scroll behavior for anchor links
-      const handleAnchorClick = (event) => {
-        const targetId = event.currentTarget.getAttribute("href").slice(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          event.preventDefault();
-          window.scrollTo({
-            top: targetElement.offsetTop,
-            behavior: "smooth",
-          });
-        }
-      };
-
-      const links = document.querySelectorAll('a[href^="#"]');
-      links.forEach((link) => link.addEventListener("click", handleAnchorClick));
-
-      return () => {
-        links.forEach((link) =>
-          link.removeEventListener("click", handleAnchorClick)
-        );
-      };
-    }, []);
-
-    const [isPopUpVisible, setIsPopUpVisible] = useState(false);
-    const [galleryImages, setGalleryImages] = useState([]);
-    const [currentImage, setCurrentImage] = useState(null);
-
-    const handleShowPopUp = (imageSrc) => {
-      setCurrentImage(imageSrc);
-      setGalleryImages(imageSrc);
-      setIsPopUpVisible(true);
+  const typedRef = useRef(null);
+  useEffect(() => {
+    document.title = "Lian's Portfolio";
+  });
+  useEffect(() => {
+    const options = {
+      strings: ["Mark Lian D. Perez", "Front-End Developer", "Web Developer"],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 1500,
     };
 
-    const handleClosePopUp = () => {
-      setIsPopUpVisible(false);
-      setCurrentImage(null);
-      setGalleryImages([]);
+    const typed = new Typed(typedRef.current, options);
+
+    // Cleanup on unmount
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
+    // Enhanced scroll behavior for anchor links
+    const handleAnchorClick = (event) => {
+      const targetId = event.currentTarget.getAttribute("href").slice(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        event.preventDefault();
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: "smooth",
+        });
+      }
     };
 
-    
-    return (
-      
-      <div className="Body">
-        <section>
-          <img src={Profile} alt="My portfolio" className="PortfolioImage" />
-          <nav className="desktop-link">
-            <div className="LianDev"> LIAN● </div>
-            <ul className="navitem">
-              <li>
-                <a href="#about">About Me</a>
-              </li>
-              <li>
-                <a href="#Certi">Certifications</a>
-              </li>
-              <li>
-                <a href="#Projects">Projects</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
-          <div className="myintro">
-            <span className="position">Hello</span>
-            <h1>
-              I'm <span className="multitext" ref={typedRef}></span>
-            </h1>
-            <p className="introduction">
-              a passionate front-end developer
-              <br />
-              with a Bachelor's in Information Technology.
-            </p>
-            <div className="SocialLinks">
-              <a
-                href="https://www.linkedin.com/in/mark-lian-perez-2278032ab/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedin} className="Logo" />
-              </a>
-              <a
-                href="https://github.com/Malows1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} className="Logo" />
-              </a>
-              <a
-                href="https://www.jobstreet.com.ph/profile/marklian-perez-DCkrxM6MB4"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={jobstreet}
-                  alt="Jobstreet Profile"
-                  className="Logo jobstreet"
-                />
-              </a>
-            </div>
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach((link) => link.addEventListener("click", handleAnchorClick));
+
+    return () => {
+      links.forEach((link) =>
+        link.removeEventListener("click", handleAnchorClick)
+      );
+    };
+  }, []);
+
+  const [isPopUpVisible, setIsPopUpVisible] = useState(false);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [currentImage, setCurrentImage] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleShowPopUp = (imageSrc) => {
+    setCurrentImage(imageSrc);
+    setGalleryImages(imageSrc);
+    setIsPopUpVisible(true);
+  };
+
+  const handleClosePopUp = () => {
+    setIsPopUpVisible(false);
+    setCurrentImage(null);
+    setGalleryImages([]);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+const [click , setClick] = useState(false);
+ const handleClick = () => setClick(!click);
+  return (
+    <div className="Body">
+      <section>
+        <img src={Profile} alt="My portfolio" className="PortfolioImage" />
+        <nav className={`desktop-link ${menuOpen ? "open" : ""}`}>
+          <div className="LianDev">LIAN●</div>
+          <ul className="navitem">
+            <li>
+              <a href="#about">About Me</a>
+            </li>
+            <li>
+              <a href="#Certi">Certifications</a>
+            </li>
+            <li>
+              <a href="#Projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+         
+          <button className="hamburger" onClick={toggleMenu}>
+          <div className="menu" onClick={handleClick}>
+          <i style={{ color: "#3d535f" }} className={ click ? 'bx bx-x' : 'bx bx-menu'}/>
           </div>
-        </section>
-
-        {/* About Me */}
-        <section id="about" className="section">
+          </button>
+        </nav>
+        <div className="myintro">
+          <span className="position">Hello</span>
+          <h1>
+            I'm <span className="multitext" ref={typedRef}></span>
+          </h1>
+          <p className="introduction">
+            a passionate front-end developer
+            <br />
+            with a Bachelor's in Information Technology.
+          </p>
+          <div className="SocialLinks">
+            <a
+              href="https://www.linkedin.com/in/mark-lian-perez-2278032ab/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faLinkedin} className="Logo" />
+            </a>
+            <a
+              href="https://github.com/Malows1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faGithub} className="Logo" />
+            </a>
+            <a
+              href="https://www.jobstreet.com.ph/profile/marklian-perez-DCkrxM6MB4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={jobstreet}
+                alt="Jobstreet Profile"
+                className="Logo jobstreet"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      {/* About Me */}
+      <section id="about" className="section">
           <div className="container">
             <div className="row">
               <div className="col1">
@@ -202,7 +206,7 @@
                   <p className="links active">Skills</p>
                 </div>
 
-                <section className="skillsection">
+                <div className="skillsection">
                   <div className="container-skill" id="skills">
                     <h1 className="heading"> Technical Skills</h1>
                     <div className="hard-bar">
@@ -378,13 +382,12 @@
                       </div>
                     </div>
                   </div>
-                </section>
+            </div>
               </div>
             </div>
           </div>
         </section>
-
-        <section id="Certi" className="section">
+              <section id="Certi" className="section">
           <div className="certi">Certifications</div>
           <div id="card-area">
             <div className="wrapper">
@@ -493,7 +496,6 @@
             </div>
           </div>
         </section>
-
         <section id="Projects" className="section">
           <div className="Proj">My Projects</div>
           <div id="card-area">
@@ -660,8 +662,8 @@
             </div>
           </div>
         </section>
-      </div>
-    );
-  }
+    </div>
+  );
+}
 
-  export default MyPortfolio;
+export default MyPortfolio;
